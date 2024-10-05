@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prattle | chat by sponzeall.com</title>
+    <link rel="stylesheet" href="css files/style.css">
+    <link rel="icon" href="img/sponzeall.png" type="image/x-icon">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="bg-gray-800">
+    <div id="onlineuser" class="absolute flex justify-center" style="z-index: 11; display: none;">
+        <img src="img/close.png" class="close absolute" style="top: 27px; right: 10px;" width="35">
+        <div class="justify-center mb-8 bg-gray-900 rounded mt-5 p-5 md:p-10 mx-2 text-white">
+            <p class="text-white text-4xl font-bold tracking-wide mx-5 mb-5">Online Users</p>
+            <div id="onlinelist" class="flex flex-wrap">
+            </div>
+        </div>
+    </div>
+
+    <!-- entry point container -->
+    <div id="nameinput" class="absolute flex justify-center">
+        <form class="bg-gray-900 rounded mt-5 mb-8 p-3 md:p-10 mx-2 text-white">
+            <div class="flex justify-center mb-8">
+                <img src="img/sponzeall.png" width="40"><p class="text-3xl">&nbsp;Prattle<p class="mt-5 text-sm text-gray-500">&nbsp;By sponzeall.com</p></p>
+            </div>
+        <input type="text" id="enternameinput" class="bg-gray-800 rounded mt-5" placeholder="Enter your name" style="width: 100%;">
+        <button type="submit" id="enterinchat" class="btn bg-gray-800 p-2 my-2 rounded text-green-500 tracking-wider" style="width: 100%;">Enter In Chat</button>
+        <p class="text-gray-500 mt-12 text-sm">Prattle is the live chat web application. which gives you realtime chatting experiance with your friends and other people.</p>
+        </form>
+    </div>
+
+
+    <!-- navigation -->
+    <nav class="flex justify-between bg-gray-900 p-3 m-1 rounded">
+        <div class="flex mt-1">
+        <img src="img/sponzeall.png" style="height: 30px;">
+        <p class="text-white text-lg tracking-wider">&nbsp;Prattle</p>
+        </div>
+            <button type="button" class="onlinelistbtn btn text-white bg-gray-800 py-2 px-3 rounded">0 Connected</button>
+    </nav>
+
+    <main>
+        <div id="chatbox" class="md:mx-12 mx-2 rounded">
+            <!-- opposite side message box -->
+             <div id="opposite_chat">
+        </div>
+        <!-- my side message box -->
+         <div id="my_chat">
+        </div>
+        </div>
+        <!-- message writer -->
+        <div id="msgbox" class="absolute bg-gray-700 mx-3">
+            <form id="form" class="text-white flex justify-between">
+            <input id="msginput" class="border-none" placeholder="Type Message" type="text">
+            <button type="submit" class="mx-2 my-1 py-2 px-3 text-green-500" style="border-radius: 100px;">Send</button>
+            </form>
+        </div>
+    </main>
+
+
+    <div style="display: none;">
+    <audio id="sendaudio" controls>
+        <source src="img/send.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="receiveaudio" controls>
+        <source src="img/receive.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="js files/script.js"></script>
+</body>
+</html>
